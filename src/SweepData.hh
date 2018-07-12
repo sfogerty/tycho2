@@ -53,10 +53,10 @@ OF THE POSSIBILITY OF SUCH DAMAGE.
     
     Holds psi and other data for the sweep.
 */
+template <typename T> 
 class SweepData : public TraverseData
 {
 public:
-   template <typename T> 
     SweepData(PsiData &psi, const PsiData_t<T> &source, PsiBoundData &psiBound,  
                const Mat2<UINT> &priorities)
     : c_psi(psi), c_psiBound(psiBound), c_source(source), 
@@ -176,7 +176,7 @@ public:
 private:
     PsiData &c_psi;
     PsiBoundData &c_psiBound;
-    const PsiData_t<float> &c_source;
+    const PsiData_t<T> &c_source;
     const Mat2<UINT> &c_priorities;
     std::vector<Mat2<double>> c_localFaceData;
     std::vector<Mat2<double>> c_localSource;
