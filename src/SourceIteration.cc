@@ -124,11 +124,10 @@ namespace SourceIteration
     Fixed point iteration (typically called source iteration)
     L Psi^{n+1} = MS \Phi^n + Q
 */
-template <typename T>
 UINT fixedPoint(SweeperAbstract &sweeper, PsiData &psi, const PsiData_t<float> &source)
 {
     // Data for problem
-    PsiData_t<float> totalSource;
+    PsiData totalSource;
     PhiData phiNew;
     PhiData phiOld;
     

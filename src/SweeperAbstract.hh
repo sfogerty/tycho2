@@ -48,7 +48,7 @@ class SweeperAbstract
 {
 public:
     virtual
-    void sweep(PsiData &psi, const PsiData_t<float> &source, 
+    void sweep(PsiData &psi, const PsiData &source, 
                bool zeroPsiBound = false) = 0;
 
     virtual
@@ -65,7 +65,7 @@ public:
     }
 
 protected:
-    PsiData_t<double> c_psi;
+    PsiData c_psi;
     PsiData_t<float> c_source;
 };
 

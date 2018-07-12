@@ -263,7 +263,7 @@ void updateBoundData(const UINT cell, const UINT angle, PsiBoundData &psiBound,
 static
 void doComputation(const UINT step,
                    const UINT angleGroup, 
-                   const PsiData &source, 
+                   const PsiData_t<float> &source, 
                    PsiData &psi, 
                    Mat2<vector<UINT>> &commSidesAngles,
                    Mat2<vector<double>> &commPsi,
@@ -370,7 +370,8 @@ void Sweeper::solve()
     
     Does an Sn transport sweep.
 */
-void Sweeper::sweep(PsiData &psi, const PsiData &source, bool zeroPsiBound)
+template <typename T>
+void Sweeper::sweep(PsiData &psi, const PsiData_t<T> &source, bool zeroPsiBound)
 {
     UNUSED_VARIABLE(zeroPsiBound);
 

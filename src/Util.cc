@@ -121,7 +121,7 @@ void phiToPsi(const PhiData &phi, PsiData_t<float> &psi);
 /*
     calcTotalSource
 */
-void calcTotalSource(const PsiData &source, const PhiData &phi, 
+void calcTotalSource(const PsiData_t<float> &source, const PhiData &phi, 
                      PsiData &totalSource)
 {
     #pragma omp parallel for

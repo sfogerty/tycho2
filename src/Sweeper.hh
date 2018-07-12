@@ -47,7 +47,8 @@ class Sweeper : public SweeperAbstract
 {
 public:
     Sweeper();
-    void sweep(PsiData &psi, const PsiData &source, bool zeroPsiBound);
+    template <typename T>
+    void sweep(PsiData &psi, const PsiData_t<T> &source, bool zeroPsiBound);
     void solve();
 
 private:
