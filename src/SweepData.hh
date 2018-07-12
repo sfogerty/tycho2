@@ -56,8 +56,8 @@ OF THE POSSIBILITY OF SUCH DAMAGE.
 class SweepData : public TraverseData
 {
 public:
-    
-    SweepData(PsiData &psi, const PsiData_t<float> &source, PsiBoundData &psiBound,  
+   template <typename T> 
+    SweepData(PsiData &psi, const PsiData_t<T> &source, PsiBoundData &psiBound,  
                const Mat2<UINT> &priorities)
     : c_psi(psi), c_psiBound(psiBound), c_source(source), 
       c_priorities(priorities), c_localFaceData(g_nThreads),

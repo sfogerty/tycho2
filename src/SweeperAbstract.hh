@@ -48,9 +48,11 @@ class SweeperAbstract
 {
 public:
     virtual
-    void sweep(PsiData &psi, const PsiData &source, 
+    void sweep(PsiData &psi, const PsiData_t<float> &source, 
                bool zeroPsiBound = false) = 0;
-
+    virtual
+    void sweeptotal(PsiData &psi, const PsiData &totalSource, 
+               bool zeroPsiBound = false) = 0;
     virtual
     void solve() = 0;
 

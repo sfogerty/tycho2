@@ -260,10 +260,11 @@ void updateBoundData(const UINT cell, const UINT angle, PsiBoundData &psiBound,
     Overall computation part of the sweeper.
     Split out so multiple sweeper schedules can be tested.
 */
+template <typename T>
 static
 void doComputation(const UINT step,
                    const UINT angleGroup, 
-                   const PsiData_t<float> &source, 
+                   const PsiData_t<T> &source, 
                    PsiData &psi, 
                    Mat2<vector<UINT>> &commSidesAngles,
                    Mat2<vector<double>> &commPsi,
@@ -370,8 +371,7 @@ void Sweeper::solve()
     
     Does an Sn transport sweep.
 */
-template <typename T>
-void Sweeper::sweep(PsiData &psi, const PsiData_t<T> &source, bool zeroPsiBound)
+void Sweeper::sweep(PsiData &psi, const PsiData_t<float> &source, bool zeroPsiBound)
 {
     UNUSED_VARIABLE(zeroPsiBound);
 
@@ -456,6 +456,149 @@ void Sweeper::sweep(PsiData &psi, const PsiData_t<T> &source, bool zeroPsiBound)
                 Timer timer1;
                 timer1.start();
                 doComputation(step, angleGroup, source, psi, 
+                              commSidesAngles, commPsi, psiBound);
+                timer1.stop();
+                computationTimes[angleGroup] += timer1.wall_clock();
+                
+                
+                // Require communication in thread id order
+                while(true) {
+                    double temp;
+                    #pragma omp atomic read
+                    temp = commNumber;
+                    if (temp == angleGroup)
+                        break;
+                }
+                
+                
+                // Nonblocking send and blocking recv
+                vector<MPI_Request> mpiRequests;
+                send(step, angleGroup, commSidesAngles, commPsi, mpiRequests);
+                recv(step, angleGroup, psiBound);
+                MPI_Waitall(mpiRequests.size(), &mpiRequests[0], 
+                            MPI_STATUSES_IGNORE);
+                
+                
+                // Barrier all MPI ranks for thread 'commNumber'
+                Comm::barrier();
+                
+                
+                // Allow next thread to communicate
+                #pragma omp atomic write
+                commNumber = (angleGroup + 1) % g_nAngleGroups;
+                
+            }
+        }
+    }
+    
+    
+    // Stop timing the sweep
+    totalTimer.stop();
+    
+    
+    // Timing output
+    double totalTime = totalTimer.wall_clock();
+    Comm::gmax(totalTime);
+    
+    for (UINT i = 0; i < g_nAngleGroups; i++) {
+        Comm::gmax(computationTimes[i]);
+    }
+    
+    if (Comm::rank() == 0) {
+        double computationTime = 0.0;
+        for (UINT i = 0; i < g_nAngleGroups; i++) {
+            computationTime = max(computationTime, computationTimes[i]);
+        }
+        printf("     Sweeper Timer (computation): %fs\n", computationTime);
+        printf("     Sweeper Timer (other): %fs\n", totalTime - computationTime);
+        printf("     Sweeper Timer (total time): %fs\n", totalTime);
+    }
+}
+void Sweeper::sweeptotal(PsiData &psi, const PsiData &totalSource, bool zeroPsiBound)
+{
+    UNUSED_VARIABLE(zeroPsiBound);
+
+
+    // Time the sweep
+    Timer totalTimer;
+    totalTimer.start();
+    
+    
+    // Get max steps for all OpenMP threads
+    UINT maxNSteps = g_sweepSchedule[0]->nSteps();
+    for(UINT angleGroup = 1; angleGroup < g_nAngleGroups; angleGroup++) {
+        maxNSteps = max(maxNSteps, g_sweepSchedule[angleGroup]->nSteps());
+    }
+    
+    
+    // Communication variables
+    Mat2<vector<UINT>> commSidesAngles(g_nAngleGroups, Comm::numRanks());
+    Mat2<vector<double>> commPsi(g_nAngleGroups, Comm::numRanks());
+    PsiBoundData psiBound;
+    
+    
+    // Time computation for each thread
+    vector<double> computationTimes(g_nAngleGroups);
+    computationTimes.assign(g_nAngleGroups, 0.0);
+    
+    
+    // Sweep Type 0
+    // Splits computation and communication
+    // Contains an expensive omp barrier
+    if (g_sweepType == SweepType_OriginalTycho1) {
+        
+        // Do the sweep
+        for (UINT step = 0; step < maxNSteps; ++step) {
+            
+            // Computation
+            #pragma omp parallel
+            {
+                Timer timer1;
+                timer1.start();
+                UINT angleGroup = omp_get_thread_num();
+                doComputation(step, angleGroup, totalSource, psi, 
+                              commSidesAngles, commPsi, psiBound);
+                timer1.stop();
+                computationTimes[angleGroup] += timer1.wall_clock();
+            }
+            
+            
+            // Communication (Non blocking send followed by blocking recv)
+            vector<MPI_Request> mpiRequests;
+            
+            for (UINT angleGroup = 0; angleGroup < g_nAngleGroups; angleGroup++) {    
+                send(step, angleGroup, commSidesAngles, commPsi, mpiRequests);
+            }
+            
+            for (UINT angleGroup = 0; angleGroup < g_nAngleGroups; angleGroup++) {
+                recv(step, angleGroup, psiBound);
+            }
+            
+            MPI_Waitall(mpiRequests.size(), &mpiRequests[0], MPI_STATUSES_IGNORE);
+            //Comm::barrier();
+        }
+    }
+    
+    
+    // Sweep Type 1
+    // Overlaps computation and communication between threads
+    // No omp barrier
+    if (g_sweepType == SweepType_OriginalTycho2) {
+        
+        // Thread ID allowed to communicate
+        UINT commNumber = 0;
+        
+        // Do the sweep
+        #pragma omp parallel
+        {
+            UINT angleGroup = omp_get_thread_num();
+            
+            for (UINT step = 0; step < maxNSteps; ++step) {
+                
+                // Computation
+                Timer timer1;
+                timer1.start();
+                doComputation(step, angleGroup, totalSource, psi, 
                               commSidesAngles, commPsi, psiBound);
                 timer1.stop();
                 computationTimes[angleGroup] += timer1.wall_clock();

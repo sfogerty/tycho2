@@ -88,3 +88,12 @@ void SweeperTraverse::sweep(PsiData &psi, const PsiData_t<float> &source,
     g_graphTraverserForward->traverse(g_maxCellsPerStep, sweepData);
 }
 
+void SweeperTraverse::sweeptotal(PsiData &psi, const PsiData &source, 
+                            bool zeroPsiBound)
+{
+    UNUSED_VARIABLE(zeroPsiBound);
+    PsiBoundData psiBound;
+    SweepData sweepData(psi, source, psiBound, c_priorities);
+    g_graphTraverserForward->traverse(g_maxCellsPerStep, sweepData);
+}
+

@@ -51,6 +51,7 @@ class SweeperTraverse : public SweeperAbstract
 public:
     SweeperTraverse();
     void sweep(PsiData &psi, const PsiData_t<float> &source, bool zeroPsiBound);
+    void sweeptotal(PsiData &psi, const PsiData &source, bool zeroPsiBound);
     void solve();
 
 private:

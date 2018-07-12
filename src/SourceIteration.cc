@@ -160,7 +160,7 @@ UINT fixedPoint(SweeperAbstract &sweeper, PsiData &psi, const PsiData_t<float> &
 
         
         // Sweep
-        sweeper.sweep(psi, totalSource);
+        sweeper.sweeptotal(psi, totalSource);
         
         
         // Calculate L_1 relative error for phi
