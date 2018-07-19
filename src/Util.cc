@@ -98,7 +98,7 @@ void psiToPhi(PhiData &phi, const PsiData_t<T> &psi)
 }
 
 template void psiToPhi(PhiData &phi, const PsiData_t<float> &psi); 
-template void psiToPhi(PhiData &phi, const PsiData_t<double> &psi); 
+template void psiToPhi(PhiData &phi, const PsiData &psi); 
 
 /*
     phiToPsi
@@ -115,8 +115,8 @@ void phiToPsi(const PhiData &phi, PsiData_t<T> &psi)
     }}}}
 }
 
-void phiToPsi(const PhiData &phi, PsiData_t<double> &psi); 
-void phiToPsi(const PhiData &phi, PsiData_t<float> &psi);
+template void phiToPsi(const PhiData &phi, PsiData_t<double> &psi); 
+template void phiToPsi(const PhiData &phi, PsiData_t<float> &psi);
 
 /*
     calcTotalSource
@@ -145,7 +145,7 @@ void sweepLocal(PsiData &psi, const PsiData_t<float> &source, PsiBoundData &psiB
 {
     Mat2<UINT> priorities(g_nCells, g_nAngles);
     const UINT maxComputePerStep = std::numeric_limits<uint64_t>::max();
-    SweepData sweepData(psi, source, psiBound, priorities);
+    SweepData_t<float> sweepData(psi, source, psiBound, priorities);
     
     g_graphTraverserForward->traverse(maxComputePerStep, sweepData);
 }
