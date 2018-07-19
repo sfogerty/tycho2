@@ -52,7 +52,7 @@ OF THE POSSIBILITY OF SUCH DAMAGE.
 #define EXTERN extern
 #endif
 
-
+#define REAL double 
 // Forward declaration of classes needed for global pointers below
 class Quadrature;
 class TychoMesh;

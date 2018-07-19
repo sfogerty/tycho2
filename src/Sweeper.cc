@@ -371,7 +371,7 @@ void Sweeper::solve()
     
     Does an Sn transport sweep.
 */
-void Sweeper::sweep(PsiData &psi, const PsiData_t<float> &source, bool zeroPsiBound)
+void Sweeper::sweep(PsiData &psi, const PsiData_t<REAL> &source, bool zeroPsiBound)
 {
     UNUSED_VARIABLE(zeroPsiBound);
 

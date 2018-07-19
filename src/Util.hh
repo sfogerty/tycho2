@@ -51,9 +51,9 @@ template <typename T>
 void psiToPhi(PhiData &phi, const PsiData_t<T> &psi);
 template <typename T>
 void phiToPsi(const PhiData &phi, PsiData_t<T> &psi);
-void calcTotalSource(const PsiData_t<float> &source, const PhiData &phi, 
+void calcTotalSource(const PsiData_t<REAL> &source, const PhiData &phi, 
                      PsiData &totalSource);
-void sweepLocal(PsiData &psi, const PsiData_t<float> &source, PsiBoundData &psiBound);
+void sweepLocal(PsiData &psi, const PsiData_t<REAL> &source, PsiBoundData &psiBound);
 void operatorS(const PhiData &phi1, PhiData &phi2);
 
 } // End namespace

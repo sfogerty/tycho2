@@ -79,12 +79,12 @@ void SweeperTraverse::solve()
     
     Sweep by traversing graph.
 */
-void SweeperTraverse::sweep(PsiData &psi, const PsiData_t<float> &source, 
+void SweeperTraverse::sweep(PsiData &psi, const PsiData_t<REAL> &source, 
                             bool zeroPsiBound)
 {
     UNUSED_VARIABLE(zeroPsiBound);
     PsiBoundData psiBound;
-    SweepData_t<float> sweepData(psi, source, psiBound, c_priorities);
+    SweepData_t<REAL> sweepData(psi, source, psiBound, c_priorities);
     g_graphTraverserForward->traverse(g_maxCellsPerStep, sweepData);
 }
 

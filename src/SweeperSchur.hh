@@ -53,7 +53,7 @@ OF THE POSSIBILITY OF SUCH DAMAGE.
 class SweeperSchur : public SweeperAbstract
 {
 public:
-    void sweep(PsiData &psi, const PsiData_t<float> &source, bool zeroPsiBound);
+    void sweep(PsiData &psi, const PsiData_t<REAL> &source, bool zeroPsiBound);
     void solve();
 
 private:

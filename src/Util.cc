@@ -121,7 +121,7 @@ template void phiToPsi(const PhiData &phi, PsiData_t<float> &psi);
 /*
     calcTotalSource
 */
-void calcTotalSource(const PsiData_t<float> &source, const PhiData &phi, 
+void calcTotalSource(const PsiData_t<REAL> &source, const PhiData &phi, 
                      PsiData &totalSource)
 {
     #pragma omp parallel for
@@ -141,11 +141,11 @@ void calcTotalSource(const PsiData_t<float> &source, const PhiData &phi,
 
     Solves L_I Psi = L_B Psi_B + Q
 */
-void sweepLocal(PsiData &psi, const PsiData_t<float> &source, PsiBoundData &psiBound)
+void sweepLocal(PsiData &psi, const PsiData_t<REAL> &source, PsiBoundData &psiBound)
 {
     Mat2<UINT> priorities(g_nCells, g_nAngles);
     const UINT maxComputePerStep = std::numeric_limits<uint64_t>::max();
-    SweepData_t<float> sweepData(psi, source, psiBound, priorities);
+    SweepData_t<REAL> sweepData(psi, source, psiBound, priorities);
     
     g_graphTraverserForward->traverse(maxComputePerStep, sweepData);
 }
