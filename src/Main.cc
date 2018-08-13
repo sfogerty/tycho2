@@ -59,7 +59,7 @@ OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <omp.h>
 #include <unistd.h>
 #include <vector>
-
+#include <fenv.h>
 
 using namespace std;
 
@@ -178,7 +178,7 @@ void readInput(const string &inputFileName,
 int main(int argc, char *argv[])
 {
     double sigmaT1, sigmaS1, sigmaT2, sigmaS2;
-
+    feenableexcept(FE_DIVBYZERO | FE_INVALID | FE_OVERFLOW);
     
     // For Debugging (prints a backtrace)
     signal(SIGSEGV, signalHandler);
