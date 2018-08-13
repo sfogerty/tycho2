@@ -154,7 +154,14 @@ UINT fixedPoint(SweeperAbstract &sweeper, PsiData &psi, const PsiData_t<PREC> &s
             phiOld[i] = phiNew[i];
         }
 
+     // change phiOld 
+     	half_float* checkpoint = new half_float[psi.size()];
+        for(UINT i = 0; i < psi.size(); i++) {
+  	      checkpoint[i].set_value(psi[i]);
+		psi[i] = checkpoint[i].get_value();
+       	 }
         
+	delete checkpoint;
         // totalSource = fixedSource + phiOld
         Util::calcTotalSource(source, phiOld, totalSource);
 
@@ -188,8 +195,10 @@ UINT fixedPoint(SweeperAbstract &sweeper, PsiData &psi, const PsiData_t<PREC> &s
         // Increment iteration
         ++iter;
     }
-    
-    
+
+        
+   
+ 
     // Time total solve
     totalTimer.stop();
     double clockTime = totalTimer.wall_clock();
