@@ -43,7 +43,8 @@ OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <string>
 #include <cinttypes>
 #include <vector>
-
+#include "half_float.hh"
+#include "bfloat16.hh"
 
 // Hack so I don't have to redefine extern variables in Global.cc
 #ifdef NO_EXTERN
@@ -52,7 +53,7 @@ OF THE POSSIBILITY OF SUCH DAMAGE.
 #define EXTERN extern
 #endif
 
-#define REAL double 
+#define PREC double 
 // Forward declaration of classes needed for global pointers below
 class Quadrature;
 class TychoMesh;
