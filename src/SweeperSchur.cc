@@ -62,7 +62,7 @@ struct SchurData
     CommSides *commSides;
     PsiData *psi;
     PsiBoundData *psiBound;
-    PsiData_t<REAL> *source;
+    PsiData_t<PREC> *source;
     
     // Only needed for SchurKrylov
     PhiData *phi;
@@ -463,7 +463,7 @@ void SweeperSchurOuter::solve()
     
     Run the Krylov solver
 */
-void SweeperSchurOuter::sweep(PsiData &psi, const PsiData_t<REAL> &source, 
+void SweeperSchurOuter::sweep(PsiData &psi, const PsiData_t<PREC> &source, 
                               bool zeroPsiBound)
 {
     if (zeroPsiBound) {

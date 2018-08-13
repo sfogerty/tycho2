@@ -59,10 +59,10 @@ class LHSData
 {
 public:
     PsiData &c_psi;
-    PsiData_t<REAL> &c_source;
+    PsiData_t<PREC> &c_source;
     SweeperAbstract &c_sweeper;
 
-    LHSData(PsiData &psi, PsiData_t<REAL> &source, SweeperAbstract &sweeper) :
+    LHSData(PsiData &psi, PsiData_t<PREC> &source, SweeperAbstract &sweeper) :
     c_psi(psi), c_source(source), c_sweeper(sweeper)    
     {}
 };
@@ -124,7 +124,7 @@ namespace SourceIteration
     Fixed point iteration (typically called source iteration)
     L Psi^{n+1} = MS \Phi^n + Q
 */
-UINT fixedPoint(SweeperAbstract &sweeper, PsiData &psi, const PsiData_t<REAL> &source)
+UINT fixedPoint(SweeperAbstract &sweeper, PsiData &psi, const PsiData_t<PREC> &source)
 {
     // Data for problem
     PsiData totalSource;
