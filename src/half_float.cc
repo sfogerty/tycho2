@@ -44,8 +44,9 @@ float half_float::get_value() {
     int exponent = (value & 0x7C00) >> 10;
     //Check for special cases of the exponent
     //If the exponent is 11111, we will assume real values were the origin
-    if((exponent ^ 0x001F) == 0)
-        exponent = 0x00FF; //We lost too much value and hit infinity.
+    if((exponent ^ 0x001F) == 0) {
+        exponent = 0x00FE; //We lost too much value and hit infinity.
+    }
     //Else assume normalized
     else
         exponent = exponent - 15 + 127;
