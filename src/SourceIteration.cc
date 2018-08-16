@@ -154,15 +154,6 @@ UINT fixedPoint(SweeperAbstract &sweeper, PsiData &psi, const PsiData_t<PREC> &s
             phiOld[i] = phiNew[i];
         }
 
-     // change phiOld
-/*    	half_float* checkpoint = new half_float[psi.size()];
-        for(UINT i = 0; i < psi.size(); i++) {
-  	      checkpoint[i].set_value(psi[i]);
-		psi[i] = checkpoint[i].get_value();
-       	 }
-	delete checkpoint;
-*/
-	//printf(" Psi 0 %", psi[0]);
         
         // totalSource = fixedSource + phiOld
         Util::calcTotalSource(source, phiOld, totalSource);
@@ -171,12 +162,13 @@ UINT fixedPoint(SweeperAbstract &sweeper, PsiData &psi, const PsiData_t<PREC> &s
         // Sweep
         sweeper.sweeptotal(psi, totalSource);
 
-     	half_float* checkpoint = new half_float[psi.size()];
+     	bfloat16* checkpoint = new bfloat16[psi.size()];
         for(UINT i = 0; i < psi.size(); i++) {
   	      checkpoint[i].set_value(psi[i]);
 		psi[i] = checkpoint[i].get_value();
        	 }
 	delete checkpoint;
+
         
         // Calculate L_1 relative error for phi
         Util::psiToPhi(phiNew, psi);
