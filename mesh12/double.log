@@ -1,0 +1,324 @@
+Architecture: x86_64
+CPU(s): 64
+Thread(s) per core: 2
+Core(s) per socket: 16
+Socket(s): 2
+NUMA node(s): 2
+CPU max MHz: 2301.0000
+CPU min MHz: 1200.0000
+L1d cache: 32K
+L2 cache: 256K
+L3 cache: 40960K
+Ranks: 32
+OMP_NUM_THREADS: 1
+Total Loops: 1
+Input File: ../util/cube-output12.pmesh
+Mem File: double.mem
+*                                                                        *
+*--------------------------------RUN 1 OF 1------------------------------*
+*                                                                        *
+*                                                                        *
+MPIIO WARNING: DVS stripe width of 32 was requested but DVS set it to 28
+See MPICH_MPIIO_DVS_MAXNODES in the intro_mpi man page.
+
+
+--- Initiating test of parallel sweeps. ---
+sigmaT1: 10.000000   sigmaS1: 8.000000
+sigmaT2: 10.000000   sigmaS2: 8.000000
+ASSERT_ON: 0
+Num angle groups: 1
+Create Tycho Mesh
+Create Tycho Mesh Done: 0.097813s
+      Traverse Timer (comm):    0.000004s
+      Traverse Timer (send):    0.000000s
+      Traverse Timer (recv):    0.000000s
+      Traverse Timer (setup):   0.000044s
+      Traverse Timer (total):   0.000110s
+      Traverse Timer (comm):    0.000004s
+      Traverse Timer (send):    0.000000s
+      Traverse Timer (recv):    0.000000s
+      Traverse Timer (setup):   0.000015s
+      Traverse Timer (total):   0.000061s
+      Traverse Timer (comm):    0.001354s
+      Traverse Timer (send):    0.000000s
+      Traverse Timer (recv):    0.000000s
+      Traverse Timer (setup):   0.000010s
+      Traverse Timer (total):   0.001733s
+   iteration: 0   error: 1.000000e+00   time: 0.001923
+      Traverse Timer (comm):    0.000577s
+      Traverse Timer (send):    0.000000s
+      Traverse Timer (recv):    0.000000s
+      Traverse Timer (setup):   0.000008s
+      Traverse Timer (total):   0.000949s
+   iteration: 1   error: 4.444445e-01   time: 0.001053
+      Traverse Timer (comm):    0.000573s
+      Traverse Timer (send):    0.000000s
+      Traverse Timer (recv):    0.000000s
+      Traverse Timer (setup):   0.000008s
+      Traverse Timer (total):   0.000948s
+   iteration: 2   error: 2.622957e-01   time: 0.001025
+      Traverse Timer (comm):    0.000525s
+      Traverse Timer (send):    0.000000s
+      Traverse Timer (recv):    0.000000s
+      Traverse Timer (setup):   0.000008s
+      Traverse Timer (total):   0.000896s
+   iteration: 3   error: 1.734425e-01   time: 0.000972
+      Traverse Timer (comm):    0.000490s
+      Traverse Timer (send):    0.000000s
+      Traverse Timer (recv):    0.000000s
+      Traverse Timer (setup):   0.000008s
+      Traverse Timer (total):   0.000861s
+   iteration: 4   error: 1.218475e-01   time: 0.000936
+      Traverse Timer (comm):    0.000492s
+      Traverse Timer (send):    0.000000s
+      Traverse Timer (recv):    0.000000s
+      Traverse Timer (setup):   0.000008s
+      Traverse Timer (total):   0.000863s
+   iteration: 5   error: 8.882000e-02   time: 0.000938
+      Traverse Timer (comm):    0.000505s
+      Traverse Timer (send):    0.000000s
+      Traverse Timer (recv):    0.000000s
+      Traverse Timer (setup):   0.000008s
+      Traverse Timer (total):   0.000876s
+   iteration: 6   error: 6.634209e-02   time: 0.000951
+      Traverse Timer (comm):    0.000466s
+      Traverse Timer (send):    0.000000s
+      Traverse Timer (recv):    0.000000s
+      Traverse Timer (setup):   0.000008s
+      Traverse Timer (total):   0.000838s
+   iteration: 7   error: 5.039920e-02   time: 0.000913
+      Traverse Timer (comm):    0.000458s
+      Traverse Timer (send):    0.000000s
+      Traverse Timer (recv):    0.000000s
+      Traverse Timer (setup):   0.000007s
+      Traverse Timer (total):   0.000827s
+   iteration: 8   error: 3.875637e-02   time: 0.000903
+      Traverse Timer (comm):    0.000461s
+      Traverse Timer (send):    0.000000s
+      Traverse Timer (recv):    0.000000s
+      Traverse Timer (setup):   0.000008s
+      Traverse Timer (total):   0.000831s
+   iteration: 9   error: 3.007288e-02   time: 0.000907
+      Traverse Timer (comm):    0.000444s
+      Traverse Timer (send):    0.000000s
+      Traverse Timer (recv):    0.000000s
+      Traverse Timer (setup):   0.000007s
+      Traverse Timer (total):   0.000814s
+   iteration: 10   error: 2.349303e-02   time: 0.000890
+      Traverse Timer (comm):    0.000476s
+      Traverse Timer (send):    0.000000s
+      Traverse Timer (recv):    0.000000s
+      Traverse Timer (setup):   0.000008s
+      Traverse Timer (total):   0.000851s
+   iteration: 11   error: 1.844769e-02   time: 0.000927
+      Traverse Timer (comm):    0.000447s
+      Traverse Timer (send):    0.000000s
+      Traverse Timer (recv):    0.000000s
+      Traverse Timer (setup):   0.000008s
+      Traverse Timer (total):   0.000816s
+   iteration: 12   error: 1.454359e-02   time: 0.000893
+      Traverse Timer (comm):    0.000455s
+      Traverse Timer (send):    0.000000s
+      Traverse Timer (recv):    0.000000s
+      Traverse Timer (setup):   0.000008s
+      Traverse Timer (total):   0.000825s
+   iteration: 13   error: 1.150119e-02   time: 0.000955
+      Traverse Timer (comm):    0.000888s
+      Traverse Timer (send):    0.000000s
+      Traverse Timer (recv):    0.000000s
+      Traverse Timer (setup):   0.000020s
+      Traverse Timer (total):   0.001258s
+   iteration: 14   error: 9.117187e-03   time: 0.001356
+      Traverse Timer (comm):    0.000545s
+      Traverse Timer (send):    0.000000s
+      Traverse Timer (recv):    0.000000s
+      Traverse Timer (setup):   0.000008s
+      Traverse Timer (total):   0.000914s
+   iteration: 15   error: 7.240671e-03   time: 0.001052
+      Traverse Timer (comm):    0.000825s
+      Traverse Timer (send):    0.000000s
+      Traverse Timer (recv):    0.000000s
+      Traverse Timer (setup):   0.000008s
+      Traverse Timer (total):   0.001195s
+   iteration: 16   error: 5.759455e-03   time: 0.001269
+      Traverse Timer (comm):    0.000681s
+      Traverse Timer (send):    0.000000s
+      Traverse Timer (recv):    0.000000s
+      Traverse Timer (setup):   0.000008s
+      Traverse Timer (total):   0.001052s
+   iteration: 17   error: 4.586597e-03   time: 0.001157
+      Traverse Timer (comm):    0.000721s
+      Traverse Timer (send):    0.000000s
+      Traverse Timer (recv):    0.000000s
+      Traverse Timer (setup):   0.000008s
+      Traverse Timer (total):   0.001091s
+   iteration: 18   error: 3.655716e-03   time: 0.001168
+      Traverse Timer (comm):    0.000772s
+      Traverse Timer (send):    0.000000s
+      Traverse Timer (recv):    0.000000s
+      Traverse Timer (setup):   0.000013s
+      Traverse Timer (total):   0.001145s
+   iteration: 19   error: 2.915837e-03   time: 0.001226
+      Traverse Timer (comm):    0.000706s
+      Traverse Timer (send):    0.000000s
+      Traverse Timer (recv):    0.000000s
+      Traverse Timer (setup):   0.000008s
+      Traverse Timer (total):   0.001078s
+   iteration: 20   error: 2.327292e-03   time: 0.001182
+      Traverse Timer (comm):    0.000658s
+      Traverse Timer (send):    0.000000s
+      Traverse Timer (recv):    0.000000s
+      Traverse Timer (setup):   0.000007s
+      Traverse Timer (total):   0.001030s
+   iteration: 21   error: 1.858300e-03   time: 0.001186
+      Traverse Timer (comm):    0.001032s
+      Traverse Timer (send):    0.000000s
+      Traverse Timer (recv):    0.000000s
+      Traverse Timer (setup):   0.000008s
+      Traverse Timer (total):   0.001405s
+   iteration: 22   error: 1.484550e-03   time: 0.001531
+      Traverse Timer (comm):    0.001163s
+      Traverse Timer (send):    0.000000s
+      Traverse Timer (recv):    0.000000s
+      Traverse Timer (setup):   0.000012s
+      Traverse Timer (total):   0.001545s
+   iteration: 23   error: 1.186309e-03   time: 0.001710
+      Traverse Timer (comm):    0.001509s
+      Traverse Timer (send):    0.000000s
+      Traverse Timer (recv):    0.000000s
+      Traverse Timer (setup):   0.000009s
+      Traverse Timer (total):   0.001896s
+   iteration: 24   error: 9.479901e-04   time: 0.002040
+      Traverse Timer (comm):    0.000437s
+      Traverse Timer (send):    0.000000s
+      Traverse Timer (recv):    0.000000s
+      Traverse Timer (setup):   0.000008s
+      Traverse Timer (total):   0.000810s
+   iteration: 25   error: 7.578696e-04   time: 0.000911
+      Traverse Timer (comm):    0.000432s
+      Traverse Timer (send):    0.000000s
+      Traverse Timer (recv):    0.000000s
+      Traverse Timer (setup):   0.000007s
+      Traverse Timer (total):   0.000804s
+   iteration: 26   error: 6.061190e-04   time: 0.000879
+      Traverse Timer (comm):    0.000443s
+      Traverse Timer (send):    0.000000s
+      Traverse Timer (recv):    0.000000s
+      Traverse Timer (setup):   0.000007s
+      Traverse Timer (total):   0.000816s
+   iteration: 27   error: 4.845478e-04   time: 0.000893
+      Traverse Timer (comm):    0.000429s
+      Traverse Timer (send):    0.000000s
+      Traverse Timer (recv):    0.000000s
+      Traverse Timer (setup):   0.000008s
+      Traverse Timer (total):   0.000800s
+   iteration: 28   error: 3.876692e-04   time: 0.000920
+      Traverse Timer (comm):    0.000889s
+      Traverse Timer (send):    0.000000s
+      Traverse Timer (recv):    0.000000s
+      Traverse Timer (setup):   0.000017s
+      Traverse Timer (total):   0.001259s
+   iteration: 29   error: 3.098826e-04   time: 0.001362
+      Traverse Timer (comm):    0.000801s
+      Traverse Timer (send):    0.000000s
+      Traverse Timer (recv):    0.000000s
+      Traverse Timer (setup):   0.000008s
+      Traverse Timer (total):   0.001174s
+   iteration: 30   error: 2.479351e-04   time: 0.001275
+      Traverse Timer (comm):    0.000984s
+      Traverse Timer (send):    0.000000s
+      Traverse Timer (recv):    0.000000s
+      Traverse Timer (setup):   0.000008s
+      Traverse Timer (total):   0.001346s
+   iteration: 31   error: 1.982204e-04   time: 0.001481
+      Traverse Timer (comm):    0.000627s
+      Traverse Timer (send):    0.000000s
+      Traverse Timer (recv):    0.000000s
+      Traverse Timer (setup):   0.000008s
+      Traverse Timer (total):   0.000999s
+   iteration: 32   error: 1.585968e-04   time: 0.001151
+      Traverse Timer (comm):    0.001018s
+      Traverse Timer (send):    0.000000s
+      Traverse Timer (recv):    0.000000s
+      Traverse Timer (setup):   0.000009s
+      Traverse Timer (total):   0.001384s
+   iteration: 33   error: 1.267066e-04   time: 0.001458
+      Traverse Timer (comm):    0.000456s
+      Traverse Timer (send):    0.000000s
+      Traverse Timer (recv):    0.000000s
+      Traverse Timer (setup):   0.000008s
+      Traverse Timer (total):   0.000827s
+   iteration: 34   error: 1.013593e-04   time: 0.000946
+      Traverse Timer (comm):    0.000699s
+      Traverse Timer (send):    0.000000s
+      Traverse Timer (recv):    0.000000s
+      Traverse Timer (setup):   0.000008s
+      Traverse Timer (total):   0.001085s
+   iteration: 35   error: 8.116589e-05   time: 0.001170
+      Traverse Timer (comm):    0.001130s
+      Traverse Timer (send):    0.000000s
+      Traverse Timer (recv):    0.000000s
+      Traverse Timer (setup):   0.000008s
+      Traverse Timer (total):   0.001495s
+   iteration: 36   error: 6.500610e-05   time: 0.001653
+      Traverse Timer (comm):    0.001030s
+      Traverse Timer (send):    0.000000s
+      Traverse Timer (recv):    0.000000s
+      Traverse Timer (setup):   0.000025s
+      Traverse Timer (total):   0.001396s
+   iteration: 37   error: 5.179228e-05   time: 0.001545
+      Traverse Timer (comm):    0.000857s
+      Traverse Timer (send):    0.000000s
+      Traverse Timer (recv):    0.000000s
+      Traverse Timer (setup):   0.000009s
+      Traverse Timer (total):   0.001223s
+   iteration: 38   error: 4.160109e-05   time: 0.001324
+      Traverse Timer (comm):    0.000439s
+      Traverse Timer (send):    0.000000s
+      Traverse Timer (recv):    0.000000s
+      Traverse Timer (setup):   0.000024s
+      Traverse Timer (total):   0.000810s
+   iteration: 39   error: 3.336398e-05   time: 0.000911
+      Traverse Timer (comm):    0.000442s
+      Traverse Timer (send):    0.000000s
+      Traverse Timer (recv):    0.000000s
+      Traverse Timer (setup):   0.000008s
+      Traverse Timer (total):   0.000816s
+   iteration: 40   error: 2.670594e-05   time: 0.000893
+      Traverse Timer (comm):    0.000423s
+      Traverse Timer (send):    0.000000s
+      Traverse Timer (recv):    0.000000s
+      Traverse Timer (setup):   0.000008s
+      Traverse Timer (total):   0.000795s
+   iteration: 41   error: 2.130840e-05   time: 0.000872
+      Traverse Timer (comm):    0.000420s
+      Traverse Timer (send):    0.000000s
+      Traverse Timer (recv):    0.000000s
+      Traverse Timer (setup):   0.000007s
+      Traverse Timer (total):   0.000791s
+   iteration: 42   error: 1.704024e-05   time: 0.000867
+      Traverse Timer (comm):    0.000423s
+      Traverse Timer (send):    0.000000s
+      Traverse Timer (recv):    0.000000s
+      Traverse Timer (setup):   0.000008s
+      Traverse Timer (total):   0.000795s
+   iteration: 43   error: 1.369092e-05   time: 0.000872
+      Traverse Timer (comm):    0.001159s
+      Traverse Timer (send):    0.000000s
+      Traverse Timer (recv):    0.000000s
+      Traverse Timer (setup):   0.000008s
+      Traverse Timer (total):   0.001524s
+   iteration: 44   error: 1.081178e-05   time: 0.001648
+      Traverse Timer (comm):    0.001260s
+      Traverse Timer (send):    0.000000s
+      Traverse Timer (recv):    0.000000s
+      Traverse Timer (setup):   0.000023s
+      Traverse Timer (total):   0.001623s
+   iteration: 45   error: 8.534873e-06   time: 0.001777
+
+Total source iteration time: 0.05
+Average source iteration time: 0.00
+
+Total time: 0.05
+L2 Relative Error: 1.000000e+00
+Diff between groups: 0.000000e+00
