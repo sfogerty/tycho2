@@ -1,0 +1,79 @@
+The following instructions describe how to configure the looptycho2.sh script to run batch jobs. There is currently no option to run the script interactively and print to a file. 
+
+All you need to run the loop script is to make sure the following parameters and variables are set according to the job you are running and then submit the job with the sbatch command found below. 
+
+pullmemory.sh is configured to gather whatever information it needs to run from looptycho2, so unless you need to collect different data you wont need to change it. 
+
+Grabdata.py still needs to be ran separately, but it only requires a filename of the file you want it to parse as an argument.
+
+##----------------------##
+
+sbatch looptycho2.sh command:
+Will print the output from looptycho2.sh which was submitted as a batch job to a file named <output/file/name>. For consistency please append <.log> to the filename.
+	-sbatch -o <output/file/name> looptycho2.sh
+
+##----------------------##
+
+sbatch environment variables:
+	
+#SBATCH --nodes=1 	
+set this equal to the amount of nodes you want to run on.
+
+#SBATCH --qos=debug 	
+Stands for "Quality of Service", set this according to the needs and the constraints of the qos, which differs with the cluster you are on. Darwin has three QOS's, 'normal', 'long', and 'debug'. Each have a max node count and max wall clock time. Check the documentation for the qos that will suit your needs best.
+
+#SBATCH -t 00:30:00
+The amount of time your job will run for. The max amount possible depends on the QOS that you use.
+
+#---------------------#
+
+ALLOCATING ARCHITECTURE AND CPU COUNT
+
+Allocating cpu architectures on Cori and Darwin requires different syntax. Make sure the correct lines are appropriately commented for each architecture (## for unused and # for used)
+The following line is the correct syntax for allocating a haswell on Cori.
+##SBATCH -C haswell
+
+The following lines are the correct syntax for allocating a haswell with minimum of 32 cpus on Darwin.
+#SBATCH -C cpu_family:haswell
+#SBATCH --mincpus=32
+
+Specifies the CPU family you want to use (along with the cpu count in Darwins case). Darwin is a heterogenous cluster and has different configurations within the same family, which may require more specific constraints to account for this diversity.
+
+##----------------------##
+
+Looptycho2.sh Parameters:
+
+Change the following parameters to match the architecture, the node/memory statistics you want to log, the desired MPI/OMP values, the loop count, and the input mesh file.
+
+set CLUSTER to 'DARWIN' or 'CORI'.
+CLUSTER='CORI'
+
+set MEMUSE to anything other than 'TRUE' and pullmemory.sh will not run.
+MEMUSE='TRUE'
+
+set VERBOSE to anything other than 'TRUE' and node information will not be included.
+VERBOSE='TRUE'
+
+set MEMNAME's first value to the variant type of Tycho2. e.g. 'double', 'single', 'qsingle', or some other term. Set the second value equal to the node count being used.
+DATE="$(date +%m%d%H%M%S)"
+MEMNAME=double-1node$DATE.mem
+
+set RANKS to the amount of MPI processes you want to run, also depends on bindings, usually defaults to per-node.
+RANKS=32
+
+set OMP_NUM_THREADS to the amount of OpenMP threads you want per MPI process, also depends on bindings.
+export OMP_NUM_THREADS=1
+
+set LOOPCOUNT to the amount of loops you want Tycho2 to run through before the job completes.
+LOOPCOUNT=1
+
+set INPUTFILE to the path for your pmesh file. This file needs to be partitioned accordingly for the intended job.
+INPUTFILE=util/pmesh/cube-4128-32r.pmesh
+
+
+##----------------------##
+
+grabdata command:
+Will run grabdata.py on a file named <output/file/name>. As it is currently configured this command will generate a file of the same name with <.sum> appended to it. An example would be double-1node.log -> double-1node.log.sum.
+	-python grabdata.py <output/file/name>
+
