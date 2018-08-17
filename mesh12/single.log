@@ -1,0 +1,342 @@
+Architecture: x86_64
+CPU(s): 40
+Thread(s) per core: 2
+Core(s) per socket: 10
+Socket(s): 2
+NUMA node(s): 2
+CPU max MHz: 2600.0000
+CPU min MHz: 1200.0000
+L1d cache: 32K
+L2 cache: 256K
+L3 cache: 25600K
+Ranks: 16
+OMP_NUM_THREADS: 1
+Total Loops: 1
+Input File: util/cube-output12.pmesh
+Mem File: single.mem
+*                                                                        *
+*--------------------------------RUN 1 OF 1------------------------------*
+*                                                                        *
+*                                                                        *
+--------------------------------------------------------------------------
+[[53255,1],15]: A high-performance Open MPI point-to-point messaging module
+was unable to find any relevant network interfaces:
+
+Module: OpenFabrics (openib)
+  Host: cn124
+
+Another transport will be used instead, although this may result in
+lower performance.
+
+NOTE: You can disable this warning by setting the MCA parameter
+btl_base_warn_component_unused to 0.
+--------------------------------------------------------------------------
+
+
+--- Initiating test of parallel sweeps. ---
+sigmaT1: 10.000000   sigmaS1: 8.000000
+sigmaT2: 10.000000   sigmaS2: 8.000000
+ASSERT_ON: 0
+Num angle groups: 1
+Create Tycho Mesh
+Insist: result == MPI_SUCCESS, failed in src/Comm.cc, line 306.
+The following message was provided: Comm::openFileForRead MPI error.
+
+
+
+Insist: result == MPI_SUCCESS, failed in src/Comm.cc, line 306.
+The following message was provided: Comm::openFileForRead MPI error.
+
+
+
+Insist: result == MPI_SUCCESS, failed in src/Comm.cc, line 306.
+The following message was provided: Comm::openFileForRead MPI error.
+
+
+
+Insist: result == MPI_SUCCESS, failed in src/Comm.cc, line 306.
+The following message was provided: Comm::openFileForRead MPI error.
+
+
+
+Insist: result == MPI_SUCCESS, failed in src/Comm.cc, line 306.
+The following message was provided: Comm::openFileForRead MPI error.
+
+
+
+Insist: result == MPI_SUCCESS, failed in src/Comm.cc, line 306.
+The following message was provided: Comm::openFileForRead MPI error.
+
+
+
+Insist: result == MPI_SUCCESS, failed in src/Comm.cc, line 306.
+The following message was provided: Comm::openFileForRead MPI error.
+
+
+
+Insist: result == MPI_SUCCESS, failed in src/Comm.cc, line 306.
+The following message was provided: Comm::openFileForRead MPI error.
+
+
+
+Insist: result == MPI_SUCCESS, failed in src/Comm.cc, line 306.
+The following message was provided: Comm::openFileForRead MPI error.
+
+
+
+Insist: result == MPI_SUCCESS, failed in src/Comm.cc, line 306.
+The following message was provided: Comm::openFileForRead MPI error.
+
+
+
+Insist: result == MPI_SUCCESS, failed in src/Comm.cc, line 306.
+The following message was provided: Comm::openFileForRead MPI error.
+
+
+
+Insist: result == MPI_SUCCESS, failed in src/Comm.cc, line 306.
+The following message was provided: Comm::openFileForRead MPI error.
+
+
+
+Insist: result == MPI_SUCCESS, failed in src/Comm.cc, line 306.
+The following message was provided: Comm::openFileForRead MPI error.
+
+
+
+Insist: result == MPI_SUCCESS, failed in src/Comm.cc, line 306.
+The following message was provided: Comm::openFileForRead MPI error.
+
+
+
+Insist: result == MPI_SUCCESS, failed in src/Comm.cc, line 306.
+The following message was provided: Comm::openFileForRead MPI error.
+
+
+
+Insist: result == MPI_SUCCESS, failed in src/Comm.cc, line 306.
+The following message was provided: Comm::openFileForRead MPI error.
+
+
+
+Error: signal 6:
+../sweep.x[0x40572e]
+/lib64/libc.so.6(+0x362f0)[0x147a184c92f0]
+/lib64/libc.so.6(gsignal+0x37)[0x147a184c9277]
+/lib64/libc.so.6(abort+0x148)[0x147a184ca968]
+../sweep.x[0x422cbb]
+../sweep.x[0x4311a9]
+../sweep.x[0x42baba]
+../sweep.x[0x426e41]
+../sweep.x[0x408454]
+../sweep.x[0x40683c]
+/lib64/libc.so.6(__libc_start_main+0xf5)[0x147a184b5445]
+../sweep.x[0x403b09]
+Error: signal 6:
+../sweep.x[0x40572e]
+/lib64/libc.so.6(+0x362f0)[0x14c39dae62f0]
+/lib64/libc.so.6(gsignal+0x37)[0x14c39dae6277]
+/lib64/libc.so.6(abort+0x148)[0x14c39dae7968]
+../sweep.x[0x422cbb]
+../sweep.x[0x4311a9]
+../sweep.x[0x42baba]
+../sweep.x[0x426e41]
+../sweep.x[0x408454]
+../sweep.x[0x40683c]
+/lib64/libc.so.6(__libc_start_main+0xf5)[0x14c39dad2445]
+../sweep.x[0x403b09]
+Error: signal 6:
+../sweep.x[0x40572e]
+/lib64/libc.so.6(+0x362f0)[0x152cbc2142f0]
+/lib64/libc.so.6(gsignal+0x37)[0x152cbc214277]
+/lib64/libc.so.6(abort+0x148)[0x152cbc215968]
+../sweep.x[0x422cbb]
+../sweep.x[0x4311a9]
+../sweep.x[0x42baba]
+../sweep.x[0x426e41]
+../sweep.x[0x408454]
+../sweep.x[0x40683c]
+/lib64/libc.so.6(__libc_start_main+0xf5)[0x152cbc200445]
+../sweep.x[0x403b09]
+Error: signal 6:
+../sweep.x[0x40572e]
+/lib64/libc.so.6(+0x362f0)[0x1539eb3d82f0]
+/lib64/libc.so.6(gsignal+0x37)[0x1539eb3d8277]
+/lib64/libc.so.6(abort+0x148)[0x1539eb3d9968]
+../sweep.x[0x422cbb]
+../sweep.x[0x4311a9]
+../sweep.x[0x42baba]
+../sweep.x[0x426e41]
+../sweep.x[0x408454]
+../sweep.x[0x40683c]
+/lib64/libc.so.6(__libc_start_main+0xf5)[0x1539eb3c4445]
+../sweep.x[0x403b09]
+Error: signal 6:
+../sweep.x[0x40572e]
+/lib64/libc.so.6(+0x362f0)[0x14d7b72ca2f0]
+/lib64/libc.so.6(gsignal+0x37)[0x14d7b72ca277]
+/lib64/libc.so.6(abort+0x148)[0x14d7b72cb968]
+../sweep.x[0x422cbb]
+../sweep.x[0x4311a9]
+../sweep.x[0x42baba]
+../sweep.x[0x426e41]
+../sweep.x[0x408454]
+../sweep.x[0x40683c]
+/lib64/libc.so.6(__libc_start_main+0xf5)[0x14d7b72b6445]
+../sweep.x[0x403b09]
+Error: signal 6:
+../sweep.x[0x40572e]
+/lib64/libc.so.6(+0x362f0)[0x15245fad72f0]
+/lib64/libc.so.6(gsignal+0x37)[0x15245fad7277]
+/lib64/libc.so.6(abort+0x148)[0x15245fad8968]
+../sweep.x[0x422cbb]
+../sweep.x[0x4311a9]
+../sweep.x[0x42baba]
+../sweep.x[0x426e41]
+../sweep.x[0x408454]
+../sweep.x[0x40683c]
+/lib64/libc.so.6(__libc_start_main+0xf5)[0x15245fac3445]
+../sweep.x[0x403b09]
+Error: signal 6:
+../sweep.x[0x40572e]
+/lib64/libc.so.6(+0x362f0)[0x151dac7922f0]
+/lib64/libc.so.6(gsignal+0x37)[0x151dac792277]
+/lib64/libc.so.6(abort+0x148)[0x151dac793968]
+../sweep.x[0x422cbb]
+../sweep.x[0x4311a9]
+../sweep.x[0x42baba]
+../sweep.x[0x426e41]
+../sweep.x[0x408454]
+../sweep.x[0x40683c]
+/lib64/libc.so.6(__libc_start_main+0xf5)[0x151dac77e445]
+../sweep.x[0x403b09]
+Error: signal 6:
+../sweep.x[0x40572e]
+/lib64/libc.so.6(+0x362f0)[0x148990a872f0]
+/lib64/libc.so.6(gsignal+0x37)[0x148990a87277]
+/lib64/libc.so.6(abort+0x148)[0x148990a88968]
+../sweep.x[0x422cbb]
+../sweep.x[0x4311a9]
+../sweep.x[0x42baba]
+../sweep.x[0x426e41]
+../sweep.x[0x408454]
+../sweep.x[0x40683c]
+/lib64/libc.so.6(__libc_start_main+0xf5)[0x148990a73445]
+../sweep.x[0x403b09]
+Error: signal 6:
+../sweep.x[0x40572e]
+/lib64/libc.so.6(+0x362f0)[0x14c451a302f0]
+/lib64/libc.so.6(gsignal+0x37)[0x14c451a30277]
+/lib64/libc.so.6(abort+0x148)[0x14c451a31968]
+../sweep.x[0x422cbb]
+../sweep.x[0x4311a9]
+../sweep.x[0x42baba]
+../sweep.x[0x426e41]
+../sweep.x[0x408454]
+../sweep.x[0x40683c]
+/lib64/libc.so.6(__libc_start_main+0xf5)[0x14c451a1c445]
+../sweep.x[0x403b09]
+Error: signal 6:
+../sweep.x[0x40572e]
+/lib64/libc.so.6(+0x362f0)[0x14b6ee0cf2f0]
+/lib64/libc.so.6(gsignal+0x37)[0x14b6ee0cf277]
+/lib64/libc.so.6(abort+0x148)[0x14b6ee0d0968]
+../sweep.x[0x422cbb]
+../sweep.x[0x4311a9]
+../sweep.x[0x42baba]
+../sweep.x[0x426e41]
+../sweep.x[0x408454]
+../sweep.x[0x40683c]
+/lib64/libc.so.6(__libc_start_main+0xf5)[0x14b6ee0bb445]
+../sweep.x[0x403b09]
+Error: signal 6:
+../sweep.x[0x40572e]
+/lib64/libc.so.6(+0x362f0)[0x145ee81832f0]
+/lib64/libc.so.6(gsignal+0x37)[0x145ee8183277]
+/lib64/libc.so.6(abort+0x148)[0x145ee8184968]
+../sweep.x[0x422cbb]
+../sweep.x[0x4311a9]
+../sweep.x[0x42baba]
+../sweep.x[0x426e41]
+../sweep.x[0x408454]
+../sweep.x[0x40683c]
+/lib64/libc.so.6(__libc_start_main+0xf5)[0x145ee816f445]
+../sweep.x[0x403b09]
+Error: signal 6:
+../sweep.x[0x40572e]
+/lib64/libc.so.6(+0x362f0)[0x14cb4e7032f0]
+/lib64/libc.so.6(gsignal+0x37)[0x14cb4e703277]
+/lib64/libc.so.6(abort+0x148)[0x14cb4e704968]
+../sweep.x[0x422cbb]
+../sweep.x[0x4311a9]
+../sweep.x[0x42baba]
+../sweep.x[0x426e41]
+../sweep.x[0x408454]
+../sweep.x[0x40683c]
+/lib64/libc.so.6(__libc_start_main+0xf5)[0x14cb4e6ef445]
+../sweep.x[0x403b09]
+Error: signal 6:
+../sweep.x[0x40572e]
+/lib64/libc.so.6(+0x362f0)[0x14ec18fdb2f0]
+/lib64/libc.so.6(gsignal+0x37)[0x14ec18fdb277]
+/lib64/libc.so.6(abort+0x148)[0x14ec18fdc968]
+../sweep.x[0x422cbb]
+../sweep.x[0x4311a9]
+../sweep.x[0x42baba]
+../sweep.x[0x426e41]
+../sweep.x[0x408454]
+../sweep.x[0x40683c]
+/lib64/libc.so.6(__libc_start_main+0xf5)[0x14ec18fc7445]
+../sweep.x[0x403b09]
+Error: signal 6:
+../sweep.x[0x40572e]
+/lib64/libc.so.6(+0x362f0)[0x14ccc82ed2f0]
+/lib64/libc.so.6(gsignal+0x37)[0x14ccc82ed277]
+/lib64/libc.so.6(abort+0x148)[0x14ccc82ee968]
+../sweep.x[0x422cbb]
+../sweep.x[0x4311a9]
+../sweep.x[0x42baba]
+../sweep.x[0x426e41]
+../sweep.x[0x408454]
+../sweep.x[0x40683c]
+/lib64/libc.so.6(__libc_start_main+0xf5)[0x14ccc82d9445]
+../sweep.x[0x403b09]
+Error: signal 6:
+../sweep.x[0x40572e]
+/lib64/libc.so.6(+0x362f0)[0x14a34b1c22f0]
+/lib64/libc.so.6(gsignal+0x37)[0x14a34b1c2277]
+/lib64/libc.so.6(abort+0x148)[0x14a34b1c3968]
+../sweep.x[0x422cbb]
+../sweep.x[0x4311a9]
+../sweep.x[0x42baba]
+../sweep.x[0x426e41]
+../sweep.x[0x408454]
+../sweep.x[0x40683c]
+/lib64/libc.so.6(__libc_start_main+0xf5)[0x14a34b1ae445]
+../sweep.x[0x403b09]
+Error: signal 6:
+../sweep.x[0x40572e]
+/lib64/libc.so.6(+0x362f0)[0x1457902812f0]
+/lib64/libc.so.6(gsignal+0x37)[0x145790281277]
+/lib64/libc.so.6(abort+0x148)[0x145790282968]
+../sweep.x[0x422cbb]
+../sweep.x[0x4311a9]
+../sweep.x[0x42baba]
+../sweep.x[0x426e41]
+../sweep.x[0x408454]
+../sweep.x[0x40683c]
+/lib64/libc.so.6(__libc_start_main+0xf5)[0x14579026d445]
+../sweep.x[0x403b09]
+-------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code.. Per user-direction, the job has been aborted.
+-------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun detected that one or more processes exited with non-zero status, thus causing
+the job to be terminated. The first process to do so was:
+
+  Process name: [[53255,1],9]
+  Exit code:    1
+--------------------------------------------------------------------------
+[cn124:22821] 15 more processes have sent help message help-mpi-btl-base.txt / btl:no-nics
+[cn124:22821] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
