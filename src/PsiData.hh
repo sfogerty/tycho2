@@ -46,7 +46,7 @@ OF THE POSSIBILITY OF SUCH DAMAGE.
 #include "Quadrature.hh"
 #include "TychoMesh.hh"
 #include <string>
-
+#include "half.hpp"
 /*
     PsiData
 
@@ -98,7 +98,8 @@ public:
         c_na = g_nAngles;
         c_nc = g_nCells;
         c_data = new T[size()];
-        setToValue(0.0);
+        PREC zero(0.0);
+        setToValue(zero);
         c_ownData = true;
     }
 
@@ -214,7 +215,8 @@ public:
         c_na = g_nAngles;
         c_ns = g_tychoMesh->getNSides();
         c_data = new double[size()];
-        setToValue(0.0);
+        PREC zero(0.0);
+        setToValue(zero);
     }
     
 
@@ -234,11 +236,10 @@ public:
     
     
     // Set constant value
-    void setToValue(double value)
+    void setToValue(PREC value)
     {
         if(c_data == NULL)
             return;
-        
         for(size_t i = 0; i < size(); i++) {
             c_data[i] = value;
         }

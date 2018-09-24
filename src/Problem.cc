@@ -147,6 +147,7 @@ void getSource(PsiData_t<T> &source)
 }
 template void getSource(PsiData_t<double> &source);
 template void getSource(PsiData_t<float> &source);
+template void getSource(PsiData_t<half> &source);
 
 /*
     createCrossSections

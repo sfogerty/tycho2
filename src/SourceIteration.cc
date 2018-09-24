@@ -162,12 +162,12 @@ UINT fixedPoint(SweeperAbstract &sweeper, PsiData &psi, const PsiData_t<PREC> &s
         // Sweep
         sweeper.sweeptotal(psi, totalSource);
 
-     	bfloat16* checkpoint = new bfloat16[psi.size()];
-        for(UINT i = 0; i < psi.size(); i++) {
-  	      checkpoint[i].set_value(psi[i]);
-		psi[i] = checkpoint[i].get_value();
-       	 }
-	delete checkpoint;
+     	//bfloat16* checkpoint = new bfloat16[psi.size()];
+        //for(UINT i = 0; i < psi.size(); i++) {
+  	//      checkpoint[i].set_value(psi[i]);
+	//	psi[i] = checkpoint[i].get_value();
+       	//}
+	//delete checkpoint;
 
         
         // Calculate L_1 relative error for phi

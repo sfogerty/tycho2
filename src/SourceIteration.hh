@@ -43,9 +43,9 @@ OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #include "SweeperAbstract.hh"
 #include "Global.hh"
-#include "half_float.hh"
+//#include "half_float.hh"
 #include "bfloat16.hh"
-
+#include "half.hpp"
 
 
 namespace SourceIteration
